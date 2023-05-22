@@ -58,6 +58,11 @@ button {
   color: white;
 }
 
+.common-button:disabled {
+  filter: grayscale(1);
+  pointer-events: none;
+}
+
 .login {
   display: flex;
   justify-content: center;
@@ -142,4 +147,167 @@ button {
 .login__infoText p {
   font-size: 14px;
   color: #4280b6;
+}
+
+/* mainPage */
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.mainPage > h2 {
+  text-align: center;
+}
+
+.mainPage__list {
+  display: grid;
+  max-width: 840px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.mainPage__item {
+  position: relative;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(0, 77, 144, 0.2);
+}
+
+.mainPage__btns {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.mainPage__desc {
+  max-height: 200px;
+  padding-right: 10px;
+}
+
+.mainPage__like {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.mainPage__like svg {
+  fill: #858585;
+  pointer-events: none;
+}
+
+.mainPage__like.active svg {
+  fill: tomato;
+}
+
+.mainPage__btns button {
+  padding: 15px 30px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #004d90;
+  border: 0;
+  transition: all 0.3s ease;
+  opacity: 0.1;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+.mainPage__btns button.active {
+  opacity: 1;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.mainPage__btns button:hover {
+  background-color: #00315c;
+}
+
+/* searsh */
+
+.search {
+  display: flex;
+  margin-top: 10px;
+  padding: 10px 40px;
+  gap: 40px;
+  background-color: #fff;
+}
+
+.search input {
+  display: block;
+  flex-grow: 1;
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  border-bottom: 1px solid #004d90;
+  background-color: transparent;
+  padding: 0;
+  text-align: center;
+}
+
+/* CSS Loader */
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #004d90;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #004d90 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*! -----custom scroll----- */
+
+.custom-scroll {
+  scrollbar-color: #004d90 #c5c5c5;
+  scrollbar-width: auto;
+  overflow-y: auto;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 5px;
+  background-color: #c5c5c5;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #004d90;
 }

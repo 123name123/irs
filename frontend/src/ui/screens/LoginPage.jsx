@@ -37,7 +37,7 @@ function LoginPage(props) {
             } else {
                 toast.success('Пользователь успешно создан!');
                 setIsLoginFormActive(true);
-                setLoginName(regName)
+                setLoginName(regName);
                 setRegName('');
                 setRegPassword('');
                 setLoginPassword('');

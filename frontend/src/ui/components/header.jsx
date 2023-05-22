@@ -1,8 +1,4 @@
-function Header(props) {
-
-    const { currentUser } = props;
-    const { goToLoginPage } = props;
-    const { onExit } = props;
+function Header({currentUser, goToLoginPage, onExit, isFavoritsActive, setIsFavoritsActive, prodLoader}) {
 
     return ( 
         <header className="header">
@@ -11,7 +7,13 @@ function Header(props) {
             <div className="header__buttons">
                 { currentUser ? (
                     <>
-                        <button className="header__button common-button">My favorits ♥</button>
+                        <button
+                            onClick={() => setIsFavoritsActive(!isFavoritsActive)}
+                            className="header__button common-button"
+                            disabled={prodLoader}
+                        >
+                            {isFavoritsActive ? 'Back' : 'My favorits ♥'}
+                        </button>
                         <span>{currentUser.username}</span>
                         <button className="header__exit" onClick={onExit}>
                             <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21h8v-2l1-1v4h-9v2l-10-3v-18l10-3v2h9v5l-1-1v-3h-8v18zm10.053-9l-3.293-3.293.707-.707 4.5 4.5-4.5 4.5-.707-.707 3.293-3.293h-9.053v-1h9.053z"/></svg>
